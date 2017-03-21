@@ -80,11 +80,12 @@ private class EarthquakeAsyncTask extends AsyncTask<String, Void, List<Earthquak
     @Override
     protected void onPostExecute(List<Earthquake> data)
     {
-
-        mAdapter.clear();
+            mAdapter.addAll(data);
+       
         if(data!=null && data.isEmpty())
         {
-            mAdapter.addAll(data);
+            mAdapter.clear();
+           
         }
     }
 }
